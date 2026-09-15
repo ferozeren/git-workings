@@ -16,6 +16,8 @@ changes, making it efficient for small or large projects. Multiple people can
 work on the same project without overwriting each other’s changes. It helps
 keep everything neat and synchronized.
 
+[Git Cheat Sheet](https://git-scm.com/cheat-sheet)
+
 ## Common Git Commands
 
 1. `git init` Starts a new Git repository in the current folder so Git can track changes.
