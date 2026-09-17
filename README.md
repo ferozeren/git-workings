@@ -63,3 +63,5 @@ keep everything neat and synchronized.
 21. `git reset --mixed <commit_id>` Moves HEAD to the given commit and copies its files to the index, discarding old staged changes but keeping changes in the working directory.
 
 22. `git reset --hard <commit_id>` Moves HEAD to the given commit and copies its files to both the index and working directory, discarding all local changes completely.
+
+![Git Architecture](https://d8it4huxumps7.cloudfront.net/uploads/images/6465f5b7125e4_what_is_git_1.jpg?d=2000x2000)
