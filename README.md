@@ -64,4 +64,6 @@ keep everything neat and synchronized.
 
 22. `git reset --hard <commit_id>` Moves HEAD to the given commit and copies its files to both the index and working directory, discarding all local changes completely.
 
+23. `git pull` Fetches changes from the remote repository and merges them into your current branch.
+
 ![Git Architecture](https://d8it4huxumps7.cloudfront.net/uploads/images/6465f5b7125e4_what_is_git_1.jpg?d=2000x2000)
