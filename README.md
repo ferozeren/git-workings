@@ -11,10 +11,10 @@ much more effectively without the disadvantages of manual versioning. As Git
 automatically tracks changes to your files, so you don’t have to create
 separate copies every time. This saves time and keeps your work organized.
 
-Instead of wasting storage space with duplicate files, Git only stores the
-changes, making it efficient for small or large projects. Multiple people can
-work on the same project without overwriting each other’s changes. It helps
-keep everything neat and synchronized.
+Instead of wasting storage space with duplicate files,Conceptually, Git stores
+snapshots of project states, with internal compression/delta mechanisms making
+storage efficient. Multiple people can work on the same project without
+overwriting each other’s changes. It helps keep everything neat and synchronized.
 
 [Git Cheat Sheet](https://git-scm.com/cheat-sheet)
 
@@ -30,7 +30,7 @@ keep everything neat and synchronized.
 
 5. `git rm <file>` Remove a file from both the working directory and the index (staging area).
 
-6. `git rm --cache <file>` Remove a file from the index (staging area) but not from the working directory.
+6. `git rm --cached <file>` Remove a file from the index (staging area) but not from the working directory.
 
 7. `git status` Show the current state of the working directory and index.
 
@@ -64,6 +64,6 @@ keep everything neat and synchronized.
 
 22. `git reset --hard <commit_id>` Moves HEAD to the given commit and copies its files to both the index and working directory, discarding all local changes completely.
 
-23. `git pull` Fetches changes from the remote repository and merges them into your current branch.
+23. `git pull` Fetches changes from the remote repository and integrates them( merge or rebase, depending on the configuration) into your current branch.
 
 ![Git Architecture](https://d8it4huxumps7.cloudfront.net/uploads/images/6465f5b7125e4_what_is_git_1.jpg?d=2000x2000)
