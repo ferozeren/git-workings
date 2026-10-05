@@ -18,6 +18,20 @@ overwriting each other’s changes. It helps keep everything neat and synchroniz
 
 [Git Cheat Sheet](https://git-scm.com/cheat-sheet)
 
+![Git Architecture](https://d8it4huxumps7.cloudfront.net/uploads/images/6465f5b7125e4_what_is_git_1.jpg?d=2000x2000)
+
+## Documentation
+
+1. [01_basics](docs/01_basics.md) Version control concepts, the three states, repositories, staging, commits, resetting, `.gitignore`, branches, and remotes.
+
+2. [02_collaboration](docs/02_collaboration.md) Forking versus cloning, clone options, keeping a branch current, push safety, conflicts, pull requests, and licensing.
+
+3. [03_more_git](docs/03_more_git.md) Rewriting history safely, merge versus rebase versus squash, stashing, and cherry-picking.
+
+4. [04_more_github](docs/04_more_github.md) GitHub Actions, the `gh` CLI, Markdown for repositories, and project files worth having.
+
+5. [advanced/](docs/advanced/README.md) Undo and recovery, commit quality and history rewriting, large repositories, hooks and automation, security, and troubleshooting.
+
 ## Git Configuration
 
 1. `git config --global user.name "<name>"` Sets your name for Git commits.
@@ -27,6 +41,12 @@ overwriting each other’s changes. It helps keep everything neat and synchroniz
 3. `git config --global <key> <value>` Sets a configuration value for Git.
 
 4. `git config --list` Lists all configuration values for Git.
+
+5. `git config --global init.defaultBranch main` Names the branch created by `git init`, so new repositories start on `main` instead of `master`.
+
+6. `git config --global pull.rebase true` Makes `git pull` rebase by default, keeping a linear history instead of creating merge commits.
+
+7. `git config --global core.hooksPath .githooks` Points Git at a committed hooks directory so hooks are shared instead of living only in `.git/hooks`.
 
 ## Common Git Commands
 
@@ -78,4 +98,35 @@ overwriting each other’s changes. It helps keep everything neat and synchroniz
 
 24. `git pull` Fetches changes from the remote repository and integrates them( merge or rebase, depending on the configuration) into your current branch.
 
-![Git Architecture](https://d8it4huxumps7.cloudfront.net/uploads/images/6465f5b7125e4_what_is_git_1.jpg?d=2000x2000)
+25. `git push` Uploads your local commits to the remote branch it tracks.
+
+26. `git push -u origin <branch-name>` Pushes and sets the upstream tracking branch, so later pushes are just `git push`.
+
+27. `git push --force-with-lease` Overwrites a remote branch, but refuses if someone else pushed since your last fetch. Safer than `--force`.
+
+28. `git remote -v` Lists the configured remotes and their URLs. Update one with `git remote set-url origin <url>`.
+
+29. `git tag <tag-name>` Creates a lightweight tag at the current commit; `git tag -a <tag-name> -m "<message>"` creates an annotated tag worth pushing.
+
+30. `git stash` Shelves your uncommitted changes to give you a clean working tree. See [docs/03_more_git](docs/03_more_git.md).
+
+31. `git rebase <branch-name>` Replays your commits on top of another branch under new commit IDs, producing a linear history.
+
+32. `git revert <commit-id>` Creates a new commit that undoes an earlier one, keeping already-pushed history intact.
+
+33. `git cherry-pick <commit-id>` Applies the changes from one specific commit onto your current branch.
+
+34. `git bisect` Narrows down the commit that introduced a bug by testing one midpoint at a time. `git bisect reset` returns to where you started.
+
+35. `git reflog` Lists every position `HEAD` has held. The way back from a bad `reset`, a deleted branch, or a lost commit.
+
+36. `git worktree add <path> <branch-name>` Creates a second working directory for the same repo, so two branches can be checked out at once.
+
+37. `git submodule add <url> <path>` Adds another repository tracked inside this one. See [docs/advanced/](docs/advanced/README.md).
+
+## Resources
+
+- [Pro Git](https://git-scm.com/book/en/v2) The reference book, free online.
+- [GitHub Docs](https://docs.github.com) Guides for repositories, Actions, and the REST API.
+- [Oh Shit, Git!?!](https://ohshitgit.com) Recovery from common mistakes, searched by error message.
+- [Git Cheat Sheet](https://git-scm.com/cheat-sheet) One-page command reference.
